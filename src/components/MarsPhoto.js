@@ -10,7 +10,7 @@ export default function MarsPhoto(){
 
         async function fetchPhoto() {
             const res = await fetch(
-                `https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&camera=mast&api_key=!!!!!`
+                `https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&camera=mast&api_key=6PeRLq1uSyHAchhNylehGB0hqXzaxd5FiqVsNkol`
             );
             const data = await res.json();
             setPhotoData(data);

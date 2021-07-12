@@ -1,28 +1,27 @@
-import React,  { useState, useEffect } from "react";
+import React from "react";
+import Rover from "./Rover";
 
+const Rovers = () => {
 
+    const roverNames = {
+        CURIOSITY: "curiosity",
+        OPPORTUNITY: "opportunity",
+        SPIRIT: "spirit"
+    };
 
-export default function Weather(){
-    const [weatherData, setWeatherData] = useState(null);
-
-    useEffect(() => {
-        fetchData();
-
-        async function fetchData() {
-            const res = await fetch(
-                `https://api.nasa.gov/insight_weather/?api_key=!!!!!&feedtype=json&ver=1.0`
-            );
-            const data = await res.json();
-            setWeatherData(data);
-        }
-    }, []);
-    
-    if (!weatherData) return <div />;
-        console.log(weatherData)
-
-    return(
-        <div className="weather">
-           <div> {weatherData.maxTemp}</div>
+    return (
+        <div>
+            <Rover
+                roverName={roverNames.CURIOSITY}
+            />
+            <Rover
+                roverName={roverNames.OPPORTUNITY}
+            />
+            <Rover
+                roverName={roverNames.SPIRIT}
+            />
         </div>
     );
 }
+
+export default Rovers;
