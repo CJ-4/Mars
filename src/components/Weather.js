@@ -14,7 +14,8 @@ const Weather = () => {
         fetch(apiKey)
             .then(res => {
                 return res.json();
-        })
+        });
+        return null;
     }
 
     useEffect(() => {
@@ -23,7 +24,7 @@ const Weather = () => {
         if (data) {
             setWeatherData(data);
         }
-    }, []);
+    }, [key]);
 
     if (!weatherData) return <div />;
 
